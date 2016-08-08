@@ -1,0 +1,43 @@
+<div class="marquee">
+  <p>Fonda Gaby</p>
+  <p>Datos del Empleado</p>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Datos Del Empleado</h3>
+  </div>
+
+  <div class="panel-body">
+
+    <p class="notice alert alert-success" role="alert"><%= notice %></p>
+
+    <p>
+      <strong>Nombre:</strong>
+      <%= @usuario.nombre %>
+    </p>
+
+    <p>
+      <strong>Apellido paterno:</strong>
+      <%= @usuario.apellido_paterno %>
+    </p>
+
+    <p>
+      <strong>Apellido materno:</strong>
+      <%= @usuario.apellido_materno %>
+    </p>
+
+    <p>
+      <strong>Telefono:</strong>
+      <%= @usuario.telefono %>
+    </p>
+
+    <p>
+      <strong>Direccion:</strong>
+      <%= @usuario.direccion %>
+    </p>
+
+    <%= link_to 'Editar Empleado', edit_usuario_path(@usuario), class: "btn btn-success", style: "color: white" %>
+    <%= link_to 'Regresar Al Listado De Empleados', usuarios_path, class: "btn btn-danger", style: "color: white" %>
+  </div>
+</div>

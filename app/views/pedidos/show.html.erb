@@ -1,0 +1,63 @@
+<div class="marquee">
+  <p>Fonda Gaby</p>
+  <p>Datos Del Pedido</p>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Datos Del Pedido</h3>
+  </div>
+
+  <div class="panel-body">
+    <p class="notice alert alert-success" role="alert"><%= notice %></p>
+
+    <p>
+      <strong>Nombre del Cliente:</strong>
+      <%= @pedido.nombre_cliente %>
+    </p>
+
+    <p>
+      <strong>Apellido Paterno:</strong>
+      <%= @pedido.apellido_paterno %>
+    </p>
+
+    <p>
+      <strong>Apellido Materno:</strong>
+      <%= @pedido.apellido_materno %>
+    </p>
+
+    <p>
+      <strong>Fecha:</strong>
+      <%= @pedido.fecha %>
+    </p>
+
+    <p>
+      <strong>Hora:</strong>
+      <%= @pedido.hora %>
+    </p>
+
+    <p>
+      <strong>Dirección:</strong>
+      <%= @pedido.direccion %>
+    </p>
+
+    <p>
+      <strong>Teléfono:</strong>
+      <%= @pedido.telefono %>
+    </p>
+
+    <p>
+      <strong>Empleado:</strong>
+      <%= @pedido.usuario_fk %>
+    </p>
+
+    <% if PlatilloPedido.exists?(:pedido=>@pedido) %>
+      <%= link_to 'Agregar Detalle del Pedido', new_platillo_pedido_path, class: 'btn btn-warning', style: "color: white"  %>
+      <%= link_to 'Editar Pedido', edit_pedido_path(@pedido), class: "btn btn-success", style: "color: white" %>
+      <%= link_to 'Regresar Al Listado de Pedidos', pedidos_path, class: "btn btn-danger", style: "color: white"%>
+    <% else %>
+      <%= link_to 'Crear Detalle del Pedido', new_platillo_pedido_path, class: 'btn btn-warning', style: "color: white"  %>
+      <%= link_to 'Regresar Al Listado de Pedidos', pedidos_path, class: "btn btn-danger", style: "color: white"%>
+    <% end %>
+  </div>
+</div>

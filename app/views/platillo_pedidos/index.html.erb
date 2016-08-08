@@ -1,0 +1,56 @@
+<div class="marquee">
+  <p>Fonda Gaby</p>
+  <p>Lista de Detalles De Pedidos</p>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Listado De Detalles De Pedidos</h3>
+  </div>
+
+  <div class="panel-body">
+    <p class="notice alert alert-success" role="alert"><%= notice %></p>
+    <% if PlatilloPedido.exists? %>
+    <div class="input-group">
+      <span class="input-group-addon icon icon-search"></span>
+      <input type="search" class="form-control" placeholder="Buscador" id="searchTerm" onkeyup="doSearch()">
+    </div>
+    <div class="table-responsive">
+      <table class="table table-hover" id="dataTable">
+        <thead>
+          <tr>
+            <th style="text-align: center;">Platillo</th>
+            <th style="text-align: center;">Pedido</th>
+            <th style="text-align: center;">Cantidad</th>
+            <th colspan="3" style="text-align: center;">Acciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% for item in @platillo_pedidos %>
+            <tr>
+              <td style="text-align: center;"><%= item.pedido %></td>
+              <td style="text-align: center;"><%= item.platillo %></td>
+              <td style="text-align: center;"><%= item.cantidad %></td>
+              <td style="text-align: center;"><%= link_to '', platillo_pedido_url(item.id_pla_ped), class: 'btn btn-info icon icon-eye', style: "color: white", :title => "Mostrar Detalle De Pedido" %></td>
+              <td style="text-align: center;"><%= link_to '', edit_platillo_pedido_url(item.id_pla_ped), class: 'btn btn-success icon icon-pencil2', style: "color: white", :title => "Editar Detalle De Pedido"  %></td>
+              <td style="text-align: center;"><%= link_to '', platillo_pedido_url(item.id_pla_ped), method: :delete, data: { confirm: '¿Estás Seguro?' }, class: 'btn btn-danger icon icon-bin', style: "color: white", :title => "Eliminar Detalle De Pedido" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+      <hr>
+        <%= will_paginate @platillo_pedidos, renderer: BootstrapPagination::Rails %>
+      <hr>
+
+      <%= link_to '', new_platillo_pedido_path, class: 'btn btn-primary icon icon-plus', style: "color: white", :title => "Agregar Detalle De Pedido" %>
+    </div>
+    <% else %>
+      <%= link_to '', new_platillo_pedido_path, class: 'btn btn-primary icon icon-plus', style: "color: white", :title => "Agregar Detalle De Pedido" %>
+      <h1 style="text-align: center;">No Existen Registros</h1>
+      <h4 style="text-align: center;">Para Agregar Detalles De Pedidos Da Click En El Botón <i class="icon icon-plus"></i></h4>
+    <% end %>
+  </div>
+</div>

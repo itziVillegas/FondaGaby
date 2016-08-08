@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_pla_ped: 1
+  platillo: 1
+  pedido: 1
+  cantidad: 1
+
+two:
+  id_pla_ped: 1
+  platillo: 1
+  pedido: 1
+  cantidad: 1

@@ -1,0 +1,36 @@
+<%= simple_form_for @producto_platillo do |f| %>
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label :platillo, "Platillo: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.select(:platillo, @platillo_options) %>
+  </div><br><br>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label :producto, "Producto: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.select(:producto, @producto_options) %>
+  </div><br><br>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label :cantidad, "Cantidad: " %>
+  </div>
+  <div class="col-lg-10">
+    <%= f.input :cantidad, label: false, :as => :integer, class: 'form-control', placeholder: 'Ej. 5' %>
+  </div>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label :unidad_medida, "Unidad de Medida: " %>
+  </div>
+  <div class="col-lg-10">
+    <%= f.input :unidad_medida, label: false, collection: ["Kilogramos", "Gramos", "Litors", "Mililitros", "Piezas", "Cajas", "Bultos"], class: 'form-control' %>
+  </div><br><br><br>
+
+  <div class="col-md-1 col-md-offset-5" style="margin-right: 5px;">
+    <button type="submit" class="btn btn-success" title="Guardar"><i class="icon icon-floppy-disk"></i></button>
+  </div>
+  <div class="col-md-1">
+    <%= link_to '', producto_platillos_path, class: "btn btn-danger icon icon-cross", style: "color: white; height: 45px;", :title => "Cancelar" %>
+  </div>
+<% end %>

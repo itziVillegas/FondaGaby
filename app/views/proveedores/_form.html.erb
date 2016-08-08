@@ -1,0 +1,43 @@
+<%= simple_form_for @proveedore do |f| %>
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label "Rfc  : " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :rfc, label: false, class: 'form-control', placeholder: 'Ej. AAA12162902W' %>
+  </div>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label "Nombre del Proveedor: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :nombre, label: false, class: 'form-control', placeholder: 'Ej. Frutería Rios' %>
+  </div>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label "Dirección: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :direccion, label: false, class: 'form-control', placeholder: 'Ej. Yucatán #45, Col. Centro' %>
+  </div>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label "Teléfono: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :telefono, label: false, :as => :tel, class: 'form-control', placeholder: 'Ej. 4180987654' %>
+  </div>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label "Email: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :correo, label: false, :as => :email, class: 'form-control', placeholder: 'Ej. rios@gmail.com' %>
+  </div>
+
+  <div class="col-md-1 col-md-offset-5" style="margin-right: 5px;">
+    <button type="submit" class="btn btn-success" title="Guardar"><i class="icon icon-floppy-disk"></i></button>
+  </div>
+  <div class="col-md-1">
+    <%= link_to '', proveedores_path, class: "btn btn-danger icon icon-cross", style: "color: white; height: 45px;", :title => 'Cancelar' %>
+  </div>
+<% end %>

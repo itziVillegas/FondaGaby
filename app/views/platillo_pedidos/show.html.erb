@@ -1,0 +1,32 @@
+<div class="marquee">
+  <p>Fonda Gaby</p>
+  <p>Datos Del Detalle de Pedido</p>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Datos Del Detalle De Pedido</h3>
+  </div>
+
+  <div class="panel-body">
+    <p class="notice alert alert-success" role="alert"><%= notice %></p>
+
+    <p>
+      <strong>Pedido:</strong>
+      <%= @platillo_pedido.pedido %>
+    </p>
+
+    <p>
+      <strong>Platillo:</strong>
+      <%= @platillo_pedido.platillo %>
+    </p>
+
+    <p>
+      <strong>Cantidad:</strong>
+      <%= @platillo_pedido.cantidad %>
+    </p>
+
+    <%= link_to 'Editar Detalle de Pedido', edit_platillo_pedido_path(@platillo_pedido), class: "btn btn-success", style: "color: white" %>
+    <%= link_to 'Regresar Al Listado de Detalle de Pedidos', platillo_pedidos_path, class: "btn btn-danger", style: "color: white" %>
+  </div>
+</div>

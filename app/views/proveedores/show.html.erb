@@ -1,0 +1,42 @@
+<div class="marquee">
+  <p>Fonda Gaby</p>
+  <p>Datos del Proveedor</p>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Datos Del Proveedor</h3>
+  </div>
+
+  <div class="panel-body">
+    <p class="notice alert alert-success" role="alert"><%= notice %></p>
+
+    <p>
+      <strong>RFC:</strong>
+      <%= @proveedore.rfc %>
+    </p>
+
+    <p>
+      <strong>Nombre:</strong>
+      <%= @proveedore.nombre %>
+    </p>
+
+    <p>
+      <strong>Dirección:</strong>
+      <%= @proveedore.direccion %>
+    </p>
+
+    <p>
+      <strong>Teléfono:</strong>
+      <%= @proveedore.telefono %>
+    </p>
+
+    <p>
+      <strong>Email:</strong>
+      <%= @proveedore.correo %>
+    </p>
+
+    <%= link_to 'Editar Proveedor', edit_proveedore_path(@proveedore), class: "btn btn-success", style: "color: white" %>
+    <%= link_to 'Regresar a Listado de Proveedores', proveedores_path, class: "btn btn-danger", style: "color: white" %>
+  </div>
+</div>

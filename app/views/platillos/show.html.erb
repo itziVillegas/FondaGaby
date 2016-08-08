@@ -1,0 +1,43 @@
+<div class="marquee">
+  <p>Fonda Gaby</p>
+  <p>Datos del Platillo</p>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Datos Del Platillo</h3>
+  </div>
+
+  <div class="panel-body">
+    <p class="notice alert alert-success" role="alert"><%= notice %></p>
+
+    <p>
+      <strong>Nombre:</strong>
+      <%= @platillo.nombre %>
+    </p>
+
+    <p>
+      <strong>Modo De Preparación:</strong>
+      <%= @platillo.descripcion %>
+    </p>
+
+    <p>
+      <strong>Precio:</strong>
+      <%= @platillo.precio %>
+    </p>
+
+    <p>
+      <strong>Tamaño:</strong>
+      <%= @platillo.tamanio %>
+    </p>
+
+    <% if ProductoPlatillo.exists?(:platillo=>@platillo) %>
+      <%= link_to 'Agregar Detalle del Platillo', new_producto_platillo_path, class: 'btn btn-warning', style: "color: white" %>
+      <%= link_to 'Editar Platillo', edit_platillo_path(@platillo),  class: "btn btn-success", style: "color: white" %>
+      <%= link_to 'Regresar Al Listado de Platillos', platillos_path, class: "btn btn-danger", style: "color: white" %>
+    <% else %>
+      <%= link_to 'Crear Detalle del Platillo', new_producto_platillo_path, class: 'btn btn-warning', style: "color: white" %>
+      <%= link_to 'Regresar Al Listado de Platillos', platillos_path, class: "btn btn-danger", style: "color: white" %>
+    <% end %>
+  </div>
+</div>

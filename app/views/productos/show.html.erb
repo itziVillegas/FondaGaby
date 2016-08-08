@@ -1,0 +1,53 @@
+<div class="marquee">
+  <p>Fonda Gaby</p>
+  <p>Datos del Producto</p>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Datos Del Producto</h3>
+  </div>
+
+  <div class="panel-body">
+
+    <p class="notice alert alert-success" role="alert"><%= notice %></p>
+
+    <p>
+      <strong>Nombre:</strong>
+      <%= @producto.nombre %>
+    </p>
+
+    <p>
+      <strong>Fecha de Caducidad:</strong>
+      <%= @producto.fecha_caducidad %>
+    </p>
+
+    <p>
+      <strong>Stock:</strong>
+      <%= @producto.stock %>
+    </p>
+
+    <p>
+      <strong>Cantidad Maxima:</strong>
+      <%= @producto.cantidad_maxima %>
+    </p>
+
+    <p>
+      <strong>Categoría:</strong>
+      <%= @producto.categoria %>
+    </p>
+
+    <p>
+      <strong>Unidad de Medida:</strong>
+      <%= @producto.unidad_medida %>
+    </p>
+
+    <p>
+      <strong>Proveedor:</strong>
+      <%= @producto.proveedor_fk %>
+    </p>
+
+    <%= link_to 'Editar Producto', edit_producto_path(@producto), class: "btn btn-success", style: "color: white" %>
+    <%= link_to 'Regresar Al Listado de Productos', productos_path, class: "btn btn-danger", style: "color: white" %>
+  </div>
+</div>

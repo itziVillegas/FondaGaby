@@ -1,0 +1,43 @@
+<%= simple_form_for @ventum do |f| %>
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label "Fecha: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :fecha, label: false, :as => :date, class: 'form-control' %>
+  </div>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label :hora, "Hora: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :hora, label: false, :as => :time, class: 'form-control' %>
+  </div>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label :subtotal, "Subtotal: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :subtotal, label: false, :as => :decimal, class: 'form-control', placeholder: 'Ej. 50' %>
+  </div>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label :total, "Total: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :total, label: false, :as => :decimal, class: 'form-control', placeholder: 'Ej. 50' %>
+  </div>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label :pedido_fk, "Pedido: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.select(:pedido_fk, @pedido_options) %>
+  </div>
+
+  <div class="col-md-1 col-md-offset-3" style="margin-right: 5px;"><br>
+    <button type="submit" class="btn btn-success" title="Guardar"><i class="icon icon-floppy-disk"></i></button>
+  </div>
+  <div class="col-md-1"><br>
+    <%= link_to '', venta_path, class: "btn btn-danger icon icon-cross", style: "color: white; height: 45px;", :title => "Cancelar" %>
+  </div>
+<% end %>

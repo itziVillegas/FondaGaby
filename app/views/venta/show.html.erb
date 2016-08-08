@@ -1,0 +1,42 @@
+<div class="marquee">
+  <p>Fonda Gaby</p>
+  <p>Datos De la Venta</p>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Datos De La Venta</h3>
+  </div>
+
+  <div class="panel-body">
+    <p class="notice alert alert-success" role="alert"><%= notice %></p>
+
+    <p>
+      <strong>Fecha:</strong>
+      <%= @ventum.fecha %>
+    </p>
+
+    <p>
+      <strong>Hora:</strong>
+      <%= @ventum.hora %>
+    </p>
+
+    <p>
+      <strong>Subtotal:</strong>
+      <%= @ventum.subtotal %>
+    </p>
+
+    <p>
+      <strong>Total:</strong>
+      <%= @ventum.total %>
+    </p>
+
+    <p>
+      <strong>Pedido:</strong>
+      <%= @ventum.pedido_fk %>
+    </p>
+
+    <%= link_to 'Editar Venta', edit_ventum_path(@ventum),  class: "btn btn-success", style: "color: white" %>
+    <%= link_to 'Regresar a Listado de Ventas', venta_path, class: "btn btn-danger", style: "color: white" %>
+  </div>
+</div>

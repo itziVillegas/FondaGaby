@@ -1,0 +1,36 @@
+<%= simple_form_for @platillo do |f| %>
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label "Nombre del Platillo: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :nombre, label: false, class: 'form-control', placeholder: 'Ej. Enchiladas Verdes' %>
+  </div>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label "Modo De Preparación: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :descripcion, label: false, :as => :text, :rows => '20', class: 'form-control', placeholder: 'Ej. Coloca el pollo el caldo de pollo, ¼ de cebolla, 1 diente de ajo y 2 cucharaditas de sal en una cacerola. Deja que hierva durante 20 minutos......' %>
+  </div>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label "Precio: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :precio, label: false, class: 'form-control', placeholder: 'Ej. 40.00' %>
+  </div>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label "Tamaño: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :tamanio, label: false, collection: ["Chico", "Mediano", "Grande"], class: 'form-control', placeholder: 'Ej. SELECCIONA UNA OPCIÓN' %>
+  </div>
+
+  <div class="col-md-1 col-md-offset-5" style="margin-right: 5px;"><br>
+    <button type="submit" class="btn btn-success" title="Guardar"><i class="icon icon-floppy-disk"></i></button>
+  </div>
+  <div class="col-md-1"><br>
+    <%= link_to '', platillos_path, class: "btn btn-danger icon icon-cross", style: "color: white; height: 45px;", :title => 'Cancelar' %>
+  </div>
+<% end %>

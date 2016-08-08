@@ -1,0 +1,61 @@
+<div class="marquee">
+  <p>Fonda Gaby</p>
+  <p>Listado de Pllatillos</p>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Listado De Platillos</h3>
+  </div>
+
+  <div class="panel-body">
+    <p class="notice alert alert-success" role="alert"><%= notice %></p>
+    <% if Platillo.exists? %>
+    <div class="input-group">
+      <span class="input-group-addon icon icon-search"></span>
+      <input type="search" class="form-control" placeholder="Buscador" id="searchTerm" onkeyup="doSearch()">
+    </div>
+    <div class="table-responsive">
+      <table class="table table-hover" id="dataTable">
+        <thead>
+          <tr>
+            <th style="text-align: center;">Nombre</th>
+            <th style="text-align: center;">Modo De Preparación</th>
+            <th style="text-align: center;">Precio</th>
+            <th style="text-align: center;">Tamaño</th>
+            <th colspan="4" style="text-align: center;">Acciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @platillos.each do |platillo| %>
+          <tr>
+            <td style="text-align: center;"><%= platillo.nombre %></td>
+            <td style="text-align: center;"><%= platillo.descripcion %></td>
+            <td style="text-align: center;"><%= platillo.precio %></td>
+            <td style="text-align: center;"><%= platillo.tamanio %></td>
+            <td style="text-align: center;"><%= link_to '', platillo, class: 'btn btn-info icon icon-eye', style: "color: white", :title => 'Mostrar Datos Del Platillo' %></td>
+            <td style="text-align: center;"><%= link_to '', edit_platillo_path(platillo), class: 'btn btn-success icon icon-pencil2', style: "color: white", :title => 'Editar Platillo' %></td>
+            <td style="text-align: center;"><%= link_to '', platillo, method: :delete, data: { confirm: '¿Estás Seguro?' }, class: 'btn btn-danger icon icon-bin', style: "color: white", :title => 'Eliminar Platillo' %></td>
+            <% if ProductoPlatillo.exists?(:platillo=>platillo) %>
+              <td style="..."><%= link_to '', producto_platillos_path, class: 'btn btn-warning icon icon-file-text', style: "color: white", :title => 'Detalle Del Platillo' %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+    <hr>
+      <%= will_paginate @platillos, renderer: BootstrapPagination::Rails %>
+    <hr>
+
+    <%= link_to '', new_platillo_path, class: 'btn btn-primary icon icon-plus', style: "color: white", :title => 'Agregar Platillo' %>
+    </div>
+    <% else %>
+      <%= link_to '', new_platillo_path, class: 'btn btn-primary icon icon-plus', style: "color: white", :title => 'Agregar Platillo' %>
+      <h1 style="text-align: center;">No Existen Registros</h1>
+      <h4 style="text-align: center;">Para Agregar Platillos Da Click En El Botón <i class="icon icon-plus"></i></h4>
+    <% end %>
+  </div>
+</div>

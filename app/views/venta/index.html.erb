@@ -1,0 +1,60 @@
+<div class="marquee">
+  <p>Fonda Gaby</p>
+  <p>Listado De Ventas</p>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Listado De Ventas</h3>
+  </div>
+
+  <div class="panel-body">
+    <p class="notice alert alert-success" role="alert"><%= notice %></p>
+    <% if Ventum.exists? %>
+    <div class="input-group">
+      <span class="input-group-addon icon icon-search"></span>
+      <input type="search" class="form-control" placeholder="Buscador" id="searchTerm" onkeyup="doSearch()">
+    </div>
+    <div class="table-responsive">
+      <table class="table table-hover" id="dataTable">
+        <thead>
+          <tr>
+            <th style="text-align: center;">Fecha</th>
+            <th style="text-align: center;">Hora</th>
+            <th style="text-align: center;">Subtotal</th>
+            <th style="text-align: center;">Total</th>
+            <th style="text-align: center;">Pedido</th>
+            <th colspan="3" style="text-align: center;">Acciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @venta.each do |ventum| %>
+            <tr>
+              <td style="text-align: center;"><%= ventum.fecha %></td>
+              <td style="text-align: center;"><%= ventum.hora %></td>
+              <td style="text-align: center;"><%= ventum.subtotal %></td>
+              <td style="text-align: center;"><%= ventum.total %></td>
+              <td style="text-align: center;"><%= ventum.pedido_fk %></td>
+              <td ><%= link_to '', ventum, class: 'btn btn-info icon icon-eye', style: "color: white", :title => "Mostrar Datos De La Venta" %></td>
+              <td><%= link_to '', edit_ventum_path(ventum), class: 'btn btn-success icon icon-pencil2', style: "color: white", :title => "Editar Venta" %></td>
+              <td><%= link_to '', ventum, method: :delete, data: { confirm: '¿Estás Seguro?' }, class: 'btn btn-danger icon icon-bin', style: "color: white", :title => "Eliminar Venta" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+      <hr>
+        <%= will_paginate @venta, renderer: BootstrapPagination::Rails %>
+      <hr>
+
+      <%= link_to '', new_ventum_path, class: 'btn btn-primary icon icon-plus', style: "color: white", :title => "Agregar Venta" %>
+    </div>
+    <% else %>
+      <%= link_to '', new_ventum_path, class: 'btn btn-primary icon icon-plus', style: "color: white", :title => "Agregar Venta" %>
+      <h1 style="text-align: center;">No Existen Registros</h1>
+      <h4 style="text-align: center;">Para Agregar Ventas Da Click En El Botón <i class="icon icon-plus"></i></h4>
+    <% end %>
+  </div>
+</div>

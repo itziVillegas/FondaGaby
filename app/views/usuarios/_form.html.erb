@@ -1,0 +1,43 @@
+<%= simple_form_for @usuario do |f| %>
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label "Nombre del Empleado : " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :nombre, label: false, class: 'form-control', placeholder: 'Ej. Pedro' %>
+  </div>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label "Apellido Paterno : " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :apellido_paterno, label: false, class: 'form-control', placeholder: 'Ej. Paramo' %>
+  </div>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label "Apellido Materno : " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :apellido_materno, label: false, class: 'form-control', placeholder: 'Ej. Pérez' %>
+  </div>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label "Teléfono : " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :telefono, label: false, :as => :tel, class: 'form-control', placeholder: 'Ej.4185678904' %>
+  </div>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label "Dirección : " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :direccion, label: false, class: 'form-control', placeholder: 'Ej. Aniversario #3, Col. Azucenas' %>
+  </div>
+
+  <div class="col-md-1 col-md-offset-5">
+    <button type="submit" class="btn btn-success" title="Guardar"><i class="icon icon-floppy-disk"></i></button>
+  </div>
+  <div class="col-md-1">
+    <%= link_to '', usuarios_path, class: "btn btn-danger icon icon-cross", style: "color: white; height: 45px;", :title => "Cancelar" %>
+  </div>
+<% end %>

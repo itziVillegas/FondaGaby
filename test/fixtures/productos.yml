@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  fecha_caducidad: 2016-06-26
+  stock: 1
+  cantidad_maxima: 1
+  categoria: MyString
+  unidad_medida: MyString
+  proveedor_fk: 1
+
+two:
+  nombre: MyString
+  fecha_caducidad: 2016-06-26
+  stock: 1
+  cantidad_maxima: 1
+  categoria: MyString
+  unidad_medida: MyString
+  proveedor_fk: 1

@@ -1,0 +1,29 @@
+<%= simple_form_for @platillo_pedido do |f| %>
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label :pedido, "Pedido: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.select(:pedido, @pedido_options) %>
+  </div><br><br>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label :platillo, "Platillo: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.select(:platillo, @platillo_options) %>
+  </div><br><br>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label :cantidad, "Cantidad: " %>
+  </div>
+  <div class="col-lg-10">
+    <%= f.input :cantidad, label: false, :as => :integer, class: 'form-control', placeholder: 'Ej. 3' %>
+  </div>
+
+  <div class="col-md-1 col-md-offset-5" style="margin-right: 5px;">
+    <button type="submit" class="btn btn-success" title="Guardar"><i class="icon icon-floppy-disk"></i></button>
+  </div>
+  <div class="col-md-1">
+    <%= link_to '', platillo_pedidos_path, class: "btn btn-danger icon icon-cross", style: "color: white; height: 45px;", :title => "Cancelar" %>
+  </div>
+<% end %>

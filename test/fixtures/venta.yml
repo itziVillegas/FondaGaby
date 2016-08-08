@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha: 2016-06-26
+  hora: 2016-06-26 14:43:58
+  total: 1.5
+  subtotal: 1.5
+  pedido_fk: 1
+
+two:
+  fecha: 2016-06-26
+  hora: 2016-06-26 14:43:58
+  total: 1.5
+  subtotal: 1.5
+  pedido_fk: 1

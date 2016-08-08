@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre_cliente: MyString
+  apellido_paterno: MyString
+  apellido_materno: MyString
+  fecha: 2016-06-26
+  hora: 2016-06-26 14:33:57
+  direccion: MyString
+  telefono: MyString
+  usuario_fk: 1
+
+two:
+  nombre_cliente: MyString
+  apellido_paterno: MyString
+  apellido_materno: MyString
+  fecha: 2016-06-26
+  hora: 2016-06-26 14:33:57
+  direccion: MyString
+  telefono: MyString
+  usuario_fk: 1

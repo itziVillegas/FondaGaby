@@ -1,0 +1,64 @@
+<%= simple_form_for @pedido do |f| %>
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label "Nombre del Cliente: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :nombre_cliente, label: false, class: 'form-control', placeholder: 'Ej. Juan' %>
+  </div>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label "Apellido Paterno: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :apellido_paterno, label: false, class: 'form-control', placeholder: 'Ej. Pérez' %>
+  </div>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label "Apellido Materno: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :apellido_materno, label: false, class: 'form-control', placeholder: 'Ej. Martínez' %>
+  </div>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label "Fecha del Pedido: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :fecha, label: false, :as => :date %>
+  </div>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label "Hora del Pedido: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :hora, label: false, :as => :time %>
+  </div>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label "Dirección: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :direccion, label: false, class: 'form-control', placeholder: 'Ej. Del Sol #4, Col. Villa Del Mar' %>
+  </div>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label "Teléfono: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.input :telefono, label: false, class: 'form-control', placeholder: 'Ej. 4181234567' %>
+  </div>
+
+  <div class="col-sm-2" style="text-align: center;">
+    <%= f.label "Empleado: " %>
+  </div>
+  <div class="col-sm-10">
+    <%= f.select :usuario_fk, @user_options %>
+  </div><br><br><br><br><br>
+
+  <div class="col-md-1 col-md-offset-3" style="margin-right: 5px;"><br>
+    <button type="submit" class="btn btn-success" title="Guardar"><i class="icon icon-floppy-disk"></i></button>
+  </div>
+  <div class="col-md-1"><br>
+    <%= link_to '', pedidos_path, class: "btn btn-danger icon icon-cross", style: "color: white; height: 45px;", :title => 'Cancelar' %>
+  </div>
+<% end %>

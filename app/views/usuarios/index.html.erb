@@ -1,0 +1,62 @@
+<div class="marquee">
+  <p>Fonda Gaby</p>
+  <p>Listado de Empleados</p>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Listado De Empleados</h3>
+  </div>
+
+  <div class="panel-body">
+    <p class="notice alert alert-success" role="alert"><%= notice %></p>
+    <% if Usuario.exists? %>
+    <div class="input-group">
+      <span class="input-group-addon icon icon-search"></span>
+      <input type="search" class="form-control" placeholder="Buscador" id="searchTerm" onkeyup="doSearch()">
+    </div>
+    <div class="table-responsive">
+      <table class="table table-hover" id="dataTable">
+        <thead>
+          <tr>
+            <th style="text-align: center;">Nombre</th>
+            <th style="text-align: center;">Apellido Paterno</th>
+            <th style="text-align: center;">Apellido Materno</th>
+            <th style="text-align: center;">Teléfono</th>
+            <th style="text-align: center;">Dirección</th>
+            <th colspan="3" style="text-align: center;">Acciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @usuarios.each do |usuario| %>
+            <tr>
+              <td style="text-align: center;"><%= usuario.nombre %></td>
+              <td style="text-align: center;"><%= usuario.apellido_paterno %></td>
+              <td style="text-align: center;"><%= usuario.apellido_materno %></td>
+              <td style="text-align: center;"><%= usuario.telefono %></td>
+              <td style="text-align: center;"><%= usuario.direccion %></td>
+              <td><%= link_to '', usuario, class: 'btn btn-info icon icon-eye', style: "color: white", :title => "Mostrar Datos Del Empleado" %></td>
+              <td><%= link_to '', edit_usuario_path(usuario), class: 'btn btn-success icon icon-pencil2', style: "color: white", :title => "Editar Empleado" %></td>
+              <td><%= link_to '', usuario, method: :delete, data: { confirm: '¿Estás Seguro?' }, class: 'btn btn-danger icon icon-bin', style: "color: white", :title => "Eliminar Empleado" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+      <hr>
+      <center>
+        <%= will_paginate @usuarios, renderer: BootstrapPagination::Rails %>
+      </center>
+      <hr>
+
+      <%= link_to '', new_usuario_path, class: 'btn btn-primary icon icon-plus', style: "color: white", :title => "Agregar Empleado" %>
+    </div>
+    <% else %>
+        <%= link_to '', new_usuario_path, class: 'btn btn-primary icon icon-plus', style: "color: white", :title => "Agregar Empleado" %>
+      <h1 style="text-align: center;">No Existen Registros</h1>
+      <h4 style="text-align: center;">Para Agregar Empleados Da Click En El Botón <i class="icon icon-plus"></i></h4>
+    <% end %>
+  </div>
+</div>

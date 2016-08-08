@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_pro_pla: 1
+  producto: 1
+  platillo: 1
+  cantidad: 1
+  unidad_medida: MyString
+
+two:
+  id_pro_pla: 1
+  producto: 1
+  platillo: 1
+  cantidad: 1
+  unidad_medida: MyString
